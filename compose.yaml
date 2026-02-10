@@ -1,0 +1,16 @@
+# compose.yaml
+
+services:
+  # Agent 01: Simple Reflex
+  reflex_agent:
+    build:
+      context: .
+      dockerfile: 01_simple_reflex/Dockerfile
+    image: ai-foundation-reflex:101
+    profiles: ["reflex"]
+    env_file: .env
+    # This allows us to interact with the input() prompt in the terminal
+    stdin_open: true
+    tty: true
+
+  # Placeholder for Agent 02 and onwards

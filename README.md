@@ -36,6 +36,8 @@ A beginner-friendly collection of AI Agents built with Python. Learning to build
    ```
    **(See `.env-sample` for a reference template)**
 
+---
+
 ## 📂 Project Structure
 
 ```
@@ -50,12 +52,41 @@ ai-agents-foundation-101/
 └── README.md              # Documentation
 ```
 
+---
+
 ## 🛠️ Building Agents
 The repository will be structured into progressive complexity levels, for example:
 - 01_simple_reflex/: Basic Chatbot (No memory, No tools)
 - 02_tool_user/: Agent that can search the web or calculate
-- 03_autonomous/: Agent that can plan and execute multiple steps
+- 03_autonomous/: Agent that can plan and execute multiple steps.  
 _(and more to follow)_
+
+---
+
+## 🏗️ Running with Docker
+
+This project is containerized to ensure a consistent environment across different machines. Each agent has its own `Dockerfile`, but they are orchestrated from the root using **Docker Compose**.
+
+### Using Profiles
+To avoid launching all agents at once, we use **Docker Profiles**. You must specify which agent (or level) you want to run.
+
+```bash
+# Run a specific agent(s) by its profile
+docker compose --profile level1 up
+
+# Run multiple profiles at once
+docker compose --profile level1 --profile level2 up
+
+# Force a rebuild of the images
+docker compose --profile level1 up --build
+```
+
+### Why Docker in this Monorepo?
+1. **Isolated Environments**: Different agents can have different dependencies without conflicts.
+2. **Shared Logic**: Docker correctly maps the `common/` utilities folder into each agent's container.
+3. **Interactive Mode**: The configuration ensures you can still interact with the agents via the terminal (`stdin_open` and `tty`).
+
+---
 
 ## 📚 Learning Resources
 
@@ -64,9 +95,13 @@ _(and more to follow)_
 - [LangGraph Documentation](https://langchain.com/langgraph)
 - [CrewAI Documentation](https://docs.crewai.com/)
 
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+---
 
 ## 📧 Contact
 
