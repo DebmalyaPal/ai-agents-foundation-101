@@ -1,0 +1,10 @@
+# LLM Provider
+groq 
+
+# Environment variables
+python-dotenv 
+
+# Agent framework
+crewai 
+langchain 
+langgraph 
