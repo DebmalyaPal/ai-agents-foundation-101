@@ -11,3 +11,6 @@ langgraph
 
 # Search tool
 ddgs
+
+# Math tools (for calculations)
+numexpr

@@ -100,6 +100,21 @@ docker compose --profile level1 up --build
 
 ---
 
+## Timeline of Gen AI and powering Agents
+
+| Era | Key Milestone | The Vibe | Primary Architecture |
+|:---:|:---:|:---:|:---:|
+| 2020 – 2021 | GPT-3 | The "Library" | Past Data Only: Pure probabilistic completion ("I know what I was told until 2021.") |
+| Early 2022 | Chain-of-Thought (CoT) | The "Thinker" | Reasoning: "Let's think step by step." (Reasoning was internal and often hallucinated.) |
+| Late 2022 | ReAct Paper | The "Strategist" | Reason + Act: The birth of the ReAct loop (Thought→Action→Observation). |
+| 2023 | Function Calling | The "Operator" | Standardized Acting: OpenAI & others added native JSON support for tools. |
+| 2024 | Agentic Workflows | The "Team" | Multi-Agent Systems: Planning, reflection, and specialized roles (CrewAI, AutoGen). |
+| 2025 | Reasoning Models | The "Deep Thinker" | Endogenous Reasoning: Models (o1, R1) that think before they speak during inference. |
+| 2026 (Now) | Autonomous Agents | The "Worker" | Full Life-Cycle: Agents that manage long-term memory, cross-app actions, and self-correction. |
+
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.

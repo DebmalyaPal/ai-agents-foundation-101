@@ -13,15 +13,28 @@ services:
     stdin_open: true
     tty: true
 
-  research_agent:
+  # Agent 02: Single Tool User
+  single_tool_agent:
     build:
       context: .
       dockerfile: 02_single_tool_use/Dockerfile
-    image: ai-foundation-researcher:101
-    profiles: ["research"]
+    image: ai-foundation-single-tool:101
+    profiles: ["single-tool"]
     env_file: .env
     # This allows us to interact with the input() prompt in the terminal
     stdin_open: true
     tty: true
 
-  # Placeholder for Agent 03 and onwards
+  # Agent 03: Multi-Tool User
+  multi_tool_agent:
+    build:
+      context: .
+      dockerfile: 03_multi_tool_use/Dockerfile
+    image: ai-foundation-multi-tool:101
+    profiles: ["multi-tool"]
+    env_file: .env
+    # This allows us to interact with the input() prompt in the terminal
+    stdin_open: true
+    tty: true
+
+  # Placeholder for Agent 04 and onwards

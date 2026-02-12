@@ -35,7 +35,7 @@ python3 02_single_tool_use/agent.py
 ### Option 2: Using Docker
 From the project **root** directory (where the `compose.yaml` file is located):
 ```bash
-docker compose --profile research run research_agent
+docker compose --profile single-tool run single_tool_agent
 ```
 
 ---
@@ -48,4 +48,4 @@ docker compose --profile research run research_agent
 
 ---
 
-**Next Step:** Now that your agent has "hands," head over to **Level 3: Memory & State** to learn how to make agents remember complex instructions across multiple tasks!
+**Next Step:** Now that your agent has "hands" but it can only use one tool (or do single external actions), head over to **Level 3: Multi-Tool Use** to learn how to make agents use multiple tools!

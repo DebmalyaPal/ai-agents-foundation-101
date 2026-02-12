@@ -4,6 +4,10 @@
 # Import the DDGS class from ddgs (DuckDuckGo Search)
 from ddgs import DDGS
 
+# Import numexpr for safe evaluation of mathematical expressions
+import numexpr as ne
+
+
 def search_web(query: str, max_results: int = 3) -> str:
     """
     Search the web using DuckDuckGo and return a concatenated string of snippets.
@@ -38,3 +42,15 @@ def search_web(query: str, max_results: int = 3) -> str:
             return "Error: Search rate limit hit. Please wait a moment before trying again."
         # If something else goes wrong, return the error message
         return f"Search Error: {str(e)}"
+
+
+def calculator(expression: str) -> str:
+    """Evaluates a mathematical expression safely."""
+    try:
+        # Using numexpr for safe evaluation
+        result = ne.evaluate(expression)
+        print(f"Expression: {expression} ------ Result: {result}")
+        return str(result)
+    except Exception as e:
+        # If something else goes wrong, return the error message
+        return f"Error: Could not evaluate expression. {str(e)}"
