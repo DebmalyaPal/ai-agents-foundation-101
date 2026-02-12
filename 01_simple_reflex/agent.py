@@ -19,7 +19,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from common.client import get_groq_client
 
 # Define the model to be used
-model = "llama-3.3-70b-versatile" # https://console.groq.com/models
+MODEL = "llama-3.3-70b-versatile" # https://console.groq.com/models
 
 
 def simple_reflex_agent():
@@ -40,7 +40,7 @@ def simple_reflex_agent():
         # Step 3: Action: Send to LLM and get a response
         # The "Condition-Action" rule is: "If user speaks, respond helpfully"
         completion = client.chat.completions.create(
-            model=model,
+            model=MODEL,
             messages=[
                 {
                     "role": "system", 

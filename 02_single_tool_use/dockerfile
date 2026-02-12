@@ -1,0 +1,28 @@
+# 02_single_tool_use/dockerfile
+
+# Use the official Python runtime as a parent image
+FROM python:3.11-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the common module into the container
+COPY common/ ./common/
+
+# Copy the agent code into the container
+COPY 02_single_tool_use/ ./02_single_tool_use/
+
+# Set the environment variable to ensure output is printed immediately
+ENV PYTHONUNBUFFERED=1
+
+# Run the agent
+CMD ["python", "02_single_tool_use/agent.py"]
+
+# Run the robust agent
+# CMD ["python", "02_single_tool_use/robust_agent.py"]

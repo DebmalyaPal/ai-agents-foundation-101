@@ -13,4 +13,15 @@ services:
     stdin_open: true
     tty: true
 
-  # Placeholder for Agent 02 and onwards
+  research_agent:
+    build:
+      context: .
+      dockerfile: 02_single_tool_use/Dockerfile
+    image: ai-foundation-researcher:101
+    profiles: ["research"]
+    env_file: .env
+    # This allows us to interact with the input() prompt in the terminal
+    stdin_open: true
+    tty: true
+
+  # Placeholder for Agent 03 and onwards

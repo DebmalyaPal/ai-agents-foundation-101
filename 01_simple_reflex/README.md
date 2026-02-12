@@ -22,7 +22,7 @@ In this level, we demonstrate:
 
 ## 🚀 Running the Agent
 
-### Option 1: Using Python
+### Option 1: Using Python (Without Docker - Use Virtual Environment & Requirements.txt)
 From the project **root** directory:
 ```bash
 python3 01_simple_reflex/agent.py
@@ -31,7 +31,7 @@ python3 01_simple_reflex/agent.py
 ### Option 2: Using Docker
 From the project **root** directory:
 ```bash
-docker compose --profile reflex up
+docker compose --profile reflex run reflex_agent  # run to enable keyboard input
 ```
 
 ## 🛠️ Implementation Details
@@ -42,4 +42,4 @@ docker compose --profile reflex up
 
 ---
 
-**Next Step:** Once we understand how this agent communicates, we head over to **Level 2: Tool User** to see how we give the agent "hands" to interact with the tools (eg. web, calculator, etc)!
+**Next Step:** Once we understand how this agent communicates, we head over to **Level 2: Single Tool Use** to see how we give the agent "hands" to interact with the tools (eg. web, calculator, etc)!

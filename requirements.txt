@@ -8,3 +8,6 @@ python-dotenv
 crewai 
 langchain 
 langgraph 
+
+# Search tool
+ddgs

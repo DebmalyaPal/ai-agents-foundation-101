@@ -57,8 +57,8 @@ ai-agents-foundation-101/
 ## 🛠️ Building Agents
 The repository will be structured into progressive complexity levels, for example:
 - 01_simple_reflex/: Basic Chatbot (No memory, No tools)
-- 02_tool_user/: Agent that can search the web or calculate
-- 03_autonomous/: Agent that can plan and execute multiple steps.  
+- 02_single_tool_use/: Agent that can do a single task, e.g. search the web
+- 03_multi_tool_use/: Agent that can do multiple tasks, e.g. search the web and then use a calculator
 _(and more to follow)_
 
 ---
@@ -73,6 +73,9 @@ To avoid launching all agents at once, we use **Docker Profiles**. You must spec
 ```bash
 # Run a specific agent(s) by its profile
 docker compose --profile level1 up
+
+# Run a specific agent of a specific profile
+docker compose --profile level1 run level1_agent
 
 # Run multiple profiles at once
 docker compose --profile level1 --profile level2 up
