@@ -45,7 +45,17 @@ ai-agents-foundation-101/
 ├── common/                # 🧠 Shared Brain & Tools
 │   ├── __init__.py        # Makes folder importable
 │   ├── client.py          # Groq client configuration
-│   └── tools.py           # Shared tools like Search
+│   ├── tools.py           # Shared tools like Search
+│   └── database.py        # SQLite logic
+|
+├── data/                  # 💾 Database files
+│   └── agents.db          # SQLite database
+|
+├── 01_simple_reflex/      # Basic Chatbot (No memory, No tools)
+├── 02_single_tool_use/    # Agent that can do a single task
+├── 03_multi_tool_use/     # Agent that can do multiple tasks
+├── 04_memory_agent/       # Memory aware agent
+|
 ├── .env                   # 🛑 API Keys (Git Ignored)
 ├── .env-sample            # 📄 Sample environment variables
 ├── requirements.txt       # Project dependencies
@@ -56,9 +66,14 @@ ai-agents-foundation-101/
 
 ## 🛠️ Building Agents
 The repository will be structured into progressive complexity levels, for example:
-- 01_simple_reflex/: Basic Chatbot (No memory, No tools)
-- 02_single_tool_use/: Agent that can do a single task, e.g. search the web
-- 03_multi_tool_use/: Agent that can do multiple tasks, e.g. search the web and then use a calculator
+
+| Level & Directory | Description |
+| :--- | :--- |
+| **01_simple_reflex/** | Basic Chatbot: A stateless implementation with no memory and no external tools. Purely reactive to the current prompt. |
+| **02_single_tool_use/** | Single-Task Agent: gent that can do a single task, e.g. search the web. |
+| **03_multi_tool_use/** | Multi-Task Agent: Agent that can do multiple tasks, e.g. search the web, use a calculator. |
+| **04_memory_agent/** | Memory-Aware Agent: Implements Persistent Episodic Memory. It stores history in a database (like SQLite) to maintain context across different script executions. |
+
 _(and more to follow)_
 
 ---

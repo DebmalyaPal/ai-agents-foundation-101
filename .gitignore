@@ -16,3 +16,7 @@ venv/
 
 # Jupyter Notebook
 **/*.ipynb_checkpoints
+
+# SQLite Database
+data/*.db
+data/*.sqlite

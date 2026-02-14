@@ -1,0 +1,28 @@
+# 04_memory_aware_agent/dockerfile
+
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the common module into the container
+COPY common/ ./common/
+
+# Copy the agent code into the container
+COPY 04_memory_aware_agent/ ./04_memory_aware_agent/
+
+# Set the environment variable to ensure output is printed immediately
+ENV PYTHONUNBUFFERED=1
+
+# Set the environment variable to prevent Python from writing .pyc files
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Run the memory-aware agent
+CMD ["python", "04_memory_aware_agent/agent.py"]

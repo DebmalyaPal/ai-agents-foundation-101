@@ -36,5 +36,22 @@ services:
     # This allows us to interact with the input() prompt in the terminal
     stdin_open: true
     tty: true
+  
+  # Agent 04: Memory Aware
+  memory_aware_agent:
+    build:
+      context: .
+      dockerfile: 04_memory_aware_agent/Dockerfile
+    image: ai-foundation-memory:101
+    profiles: ["memory-aware"]
+    env_file: .env
+    # This allows us to interact with the input() prompt in the terminal
+    stdin_open: true
+    tty: true
+    # Mapping the local 'data' folder to the container's '/app/data'
+    volumes:
+      - ./data:/app/data
+    # Optional: Keep it here to make it explicitly clear what script runs
+    command: python 04_memory_aware_agent/agent.py
 
-  # Placeholder for Agent 04 and onwards
+  # Placeholder for Agent 05 and onwards
